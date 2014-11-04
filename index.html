@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vanilla JS List Maker</title>
+
+	<script src="models.js"></script>
+	<script src="view.js"></script>
+
+	<link rel="stylesheet" href="http://necolas.github.io/normalize.css/3.0.2/normalize.css">
+	<link rel="stylesheet" href="style.css">
+	
+</head>
+<body>
+
+	<main>
+		<div class="left">
+			<h1>List Monkey!</h1>
+			<p>Type in your Todos, click to add to the list.</p>
+			<form action="#">
+				<input type="text">
+				<a href="#" id="addButton">+</a>
+
+				<ul id="todos">
+					
+				</ul>
+
+				<input type="submit" value="Save Your List" id="submit">
+			</form>
+			
+		</div>
+
+		<div class="right">
+			<img src="./images/monkey.png" alt="i am a monkey" id="monkey">
+		</div>
+
+
+	</main>
+	<script src="init.js"></script>
+
+</body>
+</html>
