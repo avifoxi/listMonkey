@@ -23,4 +23,6 @@ document.addEventListener('DOMContentLoaded', function(){
 
 	list = new List();
 
+	controller = new Controller(view, list)
+
 });
