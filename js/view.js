@@ -3,15 +3,25 @@ function View(els) {
 	this.todos = els['todos'];
 	this.submit = els['submit'];
 	this.monkey = els['monkey'];
-	
+
+	this.addClicked = new Event(this);
+	this.completeClicked = new Event(this);
+	this.removeClicked = new Event(this);
+	this.submitClicked = new Event(this);
+
 	var _this = this;
+
+	document.addEventListener('keypress', function(e){
+		if (e.charCode === 13) {
+			_this.addButton.click();
+		}
+	});
 
 	this.addButton.addEventListener('click', function(){
 		var input = document.querySelector('input');
 		var text = input.value;
 		if (text !== '') {
-			var todo = new Todo(text);
-			list.add(todo);
+			_this.addClicked.notify(text);
 			_this.monkeyShake();
 		}
 		input.value = '';		
@@ -25,8 +35,9 @@ function View(els) {
 	});
 	
 	this.submit.addEventListener('click', function(){
-		list.submit();
+		_this.submitClicked.notify();
 	});	
+
 }
 
 View.prototype = {
@@ -42,14 +53,15 @@ View.prototype = {
 		this.todos.appendChild(todo);
 	},
 	parseCommand : function(target) {
+		var _this = this;
 		var todo = target.parentElement.parentElement;
 		var todos = document.getElementsByTagName('li');
 		var index = Array.prototype.indexOf.call(todos, todo);
 		var command = target.innerText;
 		if (command === 'x'){
-			list.remove(index);
+			_this.removeClicked.notify(index);
 		} else {
-			list.complete(index);
+			_this.completeClicked.notify(index);
 		}
 	}, 
 	remove : function (index){
