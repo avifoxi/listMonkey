@@ -1,5 +1,6 @@
 listMonkey
 ==========
 
-listMonkey is a simple Front End list making app, written in complete Vanilla Javascript. 
-No libraries, no frameworks, just you, a browser, and a document. 
+listMonkey is a super simple list making interface, written in complete Vanilla Javascript and CSS. 
+
+No libraries, no frameworks, just you, a list, and a monkey. 

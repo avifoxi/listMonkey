@@ -51,5 +51,4 @@ function Controller(view, model) {
 		_model.submit();
 	});
 				
-
 }
